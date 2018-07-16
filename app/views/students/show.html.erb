@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prenume:</strong>
+  <%= @student.firstname %>
+</p>
+
+<p>
+  <strong>Nume:</strong>
+  <%= @student.lastname %>
+</p>
+
+<p>
+  <strong>Data inmatriculare:</strong>
+  <% unless @student.matdate.blank? %><%= @student.matdate.strftime("%d.%m.%Y") %><% end %>
+</p>
+
+<p>
+  <strong>Data nastere:</strong>
+  <% unless @student.matdate.blank? %><%= @student.birthdate.strftime("%d.%m.%Y") %><% end %>
+</p>
+
+<p>
+<strong>Telefon:</strong>
+<%= @student.telephone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+
+<p>
+  <strong>Adresa:</strong>
+  <%= @student.address %>
+</p>
+
+<p>
+  <strong>Institutia afiliata:</strong>
+  <%= @student.institution %>
+</p>
+
+<p>
+  <strong>Conducator stiintific:</strong>
+  <% unless @student.coordinator.blank? %><%=h @student.coordinator.complete_name %><% end %>
+</p>
+
+<p>
+  <strong>Observatii:</strong>
+  <%= @student.remarks %>
+</p>
+
+<%= link_to 'Modificare', edit_student_path(@student) %> |
+<%= link_to 'Inapoi', students_path %>

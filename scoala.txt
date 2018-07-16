@@ -1,0 +1,7 @@
+rails generate scaffold coordinator title:string firstname:string lastname:string 
+
+rails generate scaffold student firstname:string lastname:string
+
+rails generate scaffold examination_type name:string 
+
+rails generate scaffold activity registration_year:integer coordinator:references student:references status:string examination_type:references name:string defense_date:date comitee:string result:string remarks:string 

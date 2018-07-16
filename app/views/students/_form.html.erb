@@ -1,0 +1,69 @@
+<%= form_with(model: student, local: true) do |form| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> nu s-a putut face salvarea:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Prenume<br/>
+    <%= form.text_field :firstname, id: :student_firstname %>
+  </div>
+
+  <div class="field">
+    Nume<br/>
+    <%= form.text_field :lastname, id: :student_lastname %>
+  </div>
+
+  <div class="field">
+    Data inmatriculare<br/>
+    <%= form.date_select :matdate, id: :student_matdate, :use_month_numbers=>true, :start_year => 2000, :end_year => Time.now.year,
+                         :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
+  </div>
+
+  <div class="field">
+    Data nastere<br/>
+    <%= form.date_select :birthdate, id: :student_birthdate, :use_month_numbers=>true, :start_year => 1950, :end_year => Time.now.year,
+                         :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
+  </div>
+
+  <div class="field">
+    Telefon<br/>
+    <%= form.text_field :telephone, id: :student_telephone %>
+  </div>
+
+  <div class="field">
+    Email<br/>
+    <%= form.text_field :email, id: :student_email %>
+  </div>
+
+  <div class="field">
+    Adresa<br/>
+    <%= form.text_field :address, id: :student_address %>
+  </div>
+
+  <div class="field">
+    Institutia afiliata<br/>
+    <%= form.text_field :institution, id: :student_institution %>
+  </div>
+
+  <div class="field">
+    Conducator stiintific<br/>
+    <%= collection_select(:student, :coordinator_id, Coordinator.order(:lastname), :id, :complete_name, options ={:include_blank => "Select"}, {:class=>'ListaDropDown'}) %>
+  </div>
+
+  <div class="field">
+    Observatii<br/>
+    <%= form.text_area :remarks, id: :student_remarks, :rows => 4, :cols => 30 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salveaza" %>
+  </div>
+<% end %>

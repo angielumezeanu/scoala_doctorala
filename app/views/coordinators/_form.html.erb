@@ -1,0 +1,79 @@
+<%= form_with(model: coordinator, local: true) do |form| %>
+  <% if coordinator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(coordinator.errors.count, "error") %> nu s-a putut face salvarea:</h2>
+
+      <ul>
+      <% coordinator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Titlu stiintific:<br/>
+    <%= form.text_field :title, id: :coordinator_title %>
+  </div>
+
+  <div class="field">
+    Prenume<br/>
+    <%= form.text_field :firstname, id: :coordinator_firstname %>
+  </div>
+
+  <div class="field">
+    Nume<br/>
+    <%= form.text_field :lastname, id: :coordinator_lastname %>
+  </div>
+
+  <div class="field">
+    Data nastere<br/>
+    <%= form.date_select :birthdate, id: :coordinator_birthdate, :use_month_numbers=>true, :start_year => 1930, :end_year => Time.now.year,
+                         :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
+  </div>
+
+  <div class="field">
+    Ordin ministru<br/>
+    <%= form.text_field :decree, id: :coordinator_decree %>
+  </div>
+
+  <div class="field">
+    Email<br/>
+    <%= form.text_field :email, id: :coordinator_email %>
+  </div>
+
+  <div class="field">
+    Telefon<br/>
+    <%= form.text_field :tel, id: :coordinator_tel %>
+  </div>
+
+  <div class="field">
+    Colectiv<br/>
+    <%= form.text_field :sgroup, id: :coordinator_sgroup %>
+  </div>
+
+  <div class="field">
+    Adresa<br/>
+    <%= form.text_field :address, id: :coordinator_address %>
+  </div>
+
+  <div class="field">
+    Data intrarii in institut<br/>
+    <%= form.date_select :institut_date, id: :coordinator_institut_date, :use_month_numbers=>true, :start_year => 1970, :end_year => Time.now.year,
+                         :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
+  </div>
+
+  <div class="field">
+    CNP<br/>
+    <%= form.text_field :cnp, id: :coordinator_cnp %>
+  </div>
+
+  <div class="field">
+    Observatii<br/>
+    <%= form.text_area :remarks, id: :coordinator_remarks, :rows => 4, :cols => 30 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salveaza" %>
+  </div>
+<% end %>

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titlu stiintific:</strong>
+  <%= @coordinator.title %>
+</p>
+
+<p>
+  <strong>Prenume:</strong>
+  <%= @coordinator.firstname %>
+</p>
+
+<p>
+  <strong>Nume:</strong>
+  <%= @coordinator.lastname %>
+</p>
+
+<p>
+  <strong>Data nastere:</strong>
+  <% unless @coordinator.birthdate.blank? %><%= @coordinator.birthdate.strftime("%d.%m.%Y") %><% end %>
+</p>
+
+<p>
+  <strong>Ordin ministru:</strong>
+  <%= @coordinator.decree %>
+</p>
+
+<p>
+  <strong>Colectiv:</strong>
+  <%= @coordinator.sgroup %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @coordinator.email %>
+</p>
+
+<p>
+  <strong>Telefon:</strong>
+  <%= @coordinator.tel %>
+</p>
+
+<p>
+  <strong>Adresa:</strong>
+  <%= @coordinator.address %>
+</p>
+
+<p>
+  <strong>CNP:</strong>
+  <%= @coordinator.cnp %>
+</p>
+
+<p>
+  <strong>Data intrarii in institut:</strong>
+  <% unless @coordinator.institut_date.blank? %><%= @coordinator.institut_date.strftime("%d.%m.%Y") %><% end %>
+</p>
+
+<p>
+  <strong>Observatii:</strong>
+  <%= @coordinator.remarks %>
+</p>
+
+<%= link_to 'Modificare', edit_coordinator_path(@coordinator) %> |
+<%= link_to 'Inapoi', coordinators_path %>

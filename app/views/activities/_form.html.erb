@@ -1,0 +1,75 @@
+<%= form_with(model: activity, local: true) do |form| %>
+  <% if activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity.errors.count, "error") %> nu s-a putut face salvarea:</h2>
+
+      <ul>
+      <% activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="info">
+
+  <div class="field">
+    An inmatriculare<br/>
+    <%= form.number_field :registration_year, id: :activity_registration_year %>
+  </div>
+
+  <div class="field">
+    Conducator stiintific<br/>
+    <%= collection_select(:activity, :coordinator_id, Coordinator.order(:lastname), :id, :complete_name, options ={:include_blank => "Select"}, {:class=>'ListaDropDown'}) %>
+  </div>
+
+  <div class="field">
+    Doctorand<br/>
+    <%= collection_select(:activity, :student_id, Student.order(:lastname), :id, :complete_name, options ={:include_blank => "Select"}, {:class=>'ListaDropDown'}) %>
+  </div>
+
+  <div class="field">
+    Status<br/>
+    <%= form.text_field :status, id: :activity_status %>
+  </div>
+
+  <div class="field">
+    Tip examinare<br/>
+    <%= collection_select(:activity, :examination_type_id, ExaminationType.order(:name), :id, :name, options ={:include_blank => "Select"}, {:class=>'ListaDropDown'}) %>
+  </div>
+
+  <div class="field">
+    Denumire activitate<br/>
+    <%= form.text_field :name, id: :activity_name %>
+  </div>
+
+  <div class="field">
+    Data sustinerii<br/>
+    <%= form.date_select :defense_date, id: :activity_defense_date, :use_month_numbers=>true, :start_year => 2005, :end_year => Time.now.year,
+                         :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
+  </div>
+  <div class="field">
+    Comisie<br/>
+    <%= form.text_field :comitee, id: :activity_comitee %>
+  </div>
+
+  <div class="field">
+    Decizie<br/>
+    <%= form.text_field :result, id: :activity_result %>
+  </div>
+
+    <div class="field">
+      Calificativ<br/>
+      <%= form.text_field :mark, id: :activity_mark %>
+    </div>
+
+  <div class="field">
+    Observatii<br/>
+    <%= form.text_field :remarks, id: :activity_remarks %>
+  </div>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salveaza"%>
+  </div>
+<% end %>

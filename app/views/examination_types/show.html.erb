@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tip examinare:</strong>
+  <%= @examination_type.name %>
+</p>
+
+<p>
+  <strong>Titlu disciplina:</strong>
+  <%= @examination_type.name %>
+</p>
+
+<%= link_to 'Modificare', edit_examination_type_path(@examination_type) %> |
+<%= link_to 'Inapoi', examination_types_path %>

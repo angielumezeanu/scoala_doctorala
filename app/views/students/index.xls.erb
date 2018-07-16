@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Nume</Data></Cell>
+        <Cell><Data ss:Type="String">Data inmatriculare</Data></Cell>
+        <Cell><Data ss:Type="String">Data nastere</Data></Cell>
+        <Cell><Data ss:Type="String">Telefon</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Adresa</Data></Cell>
+        <Cell><Data ss:Type="String">Institutia afiliata</Data></Cell>
+        <Cell><Data ss:Type="String">Conducator stiintific</Data></Cell>
+        <Cell><Data ss:Type="String">Observatii</Data></Cell>
+
+      </Row>
+      <% @students.each do |student| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= student.lastname %> <%= student.firstname %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless student.matdate.blank? %><%= student.matdate.strftime("%d.%m.%Y") %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless student.birthdate.blank? %><%= student.birthdate.strftime("%d.%m.%Y") %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= student.telephone %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= student.email %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= student.address %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= student.institution %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless student.coordinator.blank? %><%= student.coordinator.firstname %> <%= student.coordinator.lastname %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= student.remarks %></Data></Cell>
+          </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

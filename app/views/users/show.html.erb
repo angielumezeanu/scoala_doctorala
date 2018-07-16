@@ -1,0 +1,19 @@
+
+
+<h4>Detalii utilizatorr <%= @user.email %></h4>
+<table style="border: 0px;">
+  <tr>
+  <td><b>Email:</b></td>
+  <td><%= @user.email %></td>
+</tr>
+
+
+<tr>
+  <td><b>Creat la:</b></td>
+  <td><%= @user.created_at %></td>
+ </tr>
+</table>
+
+
+<%= link_to 'Editare', edit_user_path(@user) %> |
+<%= link_to 'Inapoi', users_path %>

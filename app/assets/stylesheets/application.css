@@ -1,0 +1,401 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    background-color: rgba(145, 206, 212, 0.4);
+    color: #333;
+    margin: 33px;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+body * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: verdana, arial, helvetica, sans-serif;
+    color: darkred;
+}
+
+.info {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+input[type=submit] {
+    width: 80px;
+    height: 20px;
+    font-size: 14px;
+    color: buttontext;
+    border-radius:5px;
+    border:solid 1px darkred;
+    text-align: center;
+    background:#EAF3F3;
+}
+
+input[type=text] {
+    width: 250px;
+    height: 20px;
+}
+
+.ListaDropDown {
+    width: 250px;
+    height: 20px;
+}
+
+input[type=number] {
+    width: 250px;
+    height: 20px;
+}
+
+.link a{
+    background-color: #2b686e;
+    color: #fff;
+}
+
+.link2{
+    padding-left: 30%;
+}
+
+.link2 a{
+    background-color: #2b686e;
+    color: #fff;
+}
+
+.header {
+    background-color: #327a81;
+    color: white;
+    font-size: 1.4em;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+img {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.table-users {
+    border: 1px solid #327a81;
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    max-width: calc(100% - 2em);
+    margin: 1em auto;
+    overflow: hidden;
+}
+
+.table-users2 {
+    border-radius: 10px;
+    -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    max-width: calc(80% - 2em);
+    margin: 1em auto;
+    overflow: scroll;
+}
+
+table {
+    width: 100%;
+}
+table td, table th {
+    color: #2b686e;
+    padding: 10px;
+    text-align: left;
+}
+table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+}
+table td:last-child {
+    font-size: 0.875em;
+    line-height: 1.4;
+    text-align: center;
+}
+table th {
+    background-color: #daeff1;
+    font-weight: 300;
+}
+table tr:nth-child(2n) {
+    background-color: white;
+}
+table tr:nth-child(2n+1) {
+    background-color: #edf7f8;
+}
+
+/* Meniu orizontal */
+
+#rolling-nav {
+    font:normal 12px 'Trebuchet MS',Trebuchet,Arial,Sans-Serif;
+    color:white;
+    text-transform:uppercase;
+    /* outline:1px solid; */
+    max-width: calc(100% - 2em);
+    margin:0px auto;
+    padding-left: 30%;
+}
+
+#rolling-nav ul {
+    height:50px;
+    margin:0px 0px;
+    padding:0px 0px;
+    overflow:hidden;
+}
+
+#rolling-nav li {
+    float:left;
+    display:inline;
+    list-style:none;
+    margin:0px 0px;
+    padding:0px 0px;
+}
+
+#rolling-nav a{
+    display:block;
+    margin:0px 0px;
+    padding:0px 30px;
+    line-height:50px;
+    color:white;
+    text-decoration:none;
+    background-color: #2b686e;
+    background-image:-webkit-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+    background-image:-moz-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+    background-image:-ms-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+    background-image:-o-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+    background-image:linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+
+}
+
+
+#rolling-nav a:hover {
+    color: yellow;
+}
+
+#rolling-nav a.selected {
+    color: yellow;
+}
+
+
+/* pentru monitoare mici 1366 */
+
+@media screen and (max-width: 1400px) {
+
+    body {
+        background-color: rgba(145, 206, 212, 0.4);
+        color: #333;
+        margin: 33px;
+        font-family: verdana, arial, helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+    body * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: verdana, arial, helvetica, sans-serif;
+        color: darkred;
+    }
+
+    .info {
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 3px;
+    }
+
+    input[type=submit] {
+        width: 70px;
+        height: 20px;
+        font-size: 12px;
+        color: buttontext;
+        border-radius: 5px;
+        border: solid 1px darkred;
+        text-align: center;
+        background: #EAF3F3;
+    }
+
+    input[type=text] {
+        width: 200px;
+        height: 20px;
+    }
+
+    .ListaDropDown {
+        width: 200px;
+        height: 20px;
+    }
+
+    input[type=number] {
+        width: 200px;
+        height: 20px;
+    }
+
+    .link a {
+        background-color: #2b686e;
+        color: #fff;
+    }
+
+    .link2 {
+        padding-left: 30%;
+    }
+
+    .link2 a {
+        background-color: #2b686e;
+        color: #fff;
+    }
+
+    .header {
+        background-color: #327a81;
+        color: white;
+        font-size: 1.1em;
+        padding: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    img {
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+    }
+
+    .table-users {
+        border: 1px solid #327a81;
+        border-radius: 10px;
+        -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        max-width: calc(100%);
+        margin: 1em auto;
+        overflow: scroll;
+    }
+
+    .table-users2 {
+        border-radius: 10px;
+        -webkit-box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+        max-width: calc(80%);
+        margin: 1em auto;
+        overflow: hidden;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td, table th {
+        color: #2b686e;
+        padding: 10px;
+        text-align: left;
+    }
+
+    table td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    table td:last-child {
+        font-size: 0.8em;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    table th {
+        background-color: #daeff1;
+        font-weight: 300;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: white;
+    }
+
+    table tr:nth-child(2n+1) {
+        background-color: #edf7f8;
+    }
+
+    #user_login_box {
+        width: 150px;
+        font-size: 12px;
+    }
+
+    /* Meniu orizontal normal */
+    #rolling-nav {
+        font: normal 10px 'Trebuchet MS', Trebuchet, Arial, Sans-Serif;
+        color: white;
+        text-transform: uppercase;
+        /* outline:1px solid; */
+        max-width: calc(100%);
+        margin: 0px auto;
+        padding-left: 10%;
+    }
+
+    #rolling-nav ul {
+        height: 30px;
+        margin: 0px 0px;
+        padding: 0px 0px;
+        overflow: auto;
+    }
+
+    #rolling-nav li {
+        float: left;
+        display: inline;
+        list-style: none;
+        margin: 0px 0px;
+        padding: 0px 0px;
+    }
+
+    #rolling-nav a {
+        display: block;
+        margin: 0px 0px;
+        padding: 0px 30px;
+        line-height: 30px;
+        color: white;
+        text-decoration: none;
+        background-color: #2b686e;
+        background-image: -webkit-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+        background-image: -moz-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+        background-image: -ms-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+        background-image: -o-linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+        background-image: linear-gradient(top, #2b686e 0%, #265d63 50%, #225358 50%, #1e484d 100%);
+
+    }
+
+    #rolling-nav a:hover {
+        color: yellow;
+    }
+
+    #rolling-nav a.selected {
+        color: yellow;
+    }
+
+    /* Sfarsit meniu horizontal */
+}
+
+
+

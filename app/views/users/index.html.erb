@@ -1,0 +1,29 @@
+<h2>Lista Utilizatori</h2>
+
+<%= link_to 'New User', new_user_path, :class=>"newr" %><br/><br/>
+
+
+<table class="tabel">
+  <tr class="row">
+    <th>Email</th>
+    <th >Utilizator </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.username %></td>
+      <td><%= link_to 'Detalii', user %></td>
+      <td><%= link_to 'Editare', edit_user_path(user) %></td>
+      <td><%= link_to 'Stergere', user, :confirm => 'Esti sigur ca vrei sa stergi?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+
+<%= link_to 'Utilizator nou', new_user_path, :class=>"newr" %>

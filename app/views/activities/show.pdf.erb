@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<h1>Informatii despre activitatea doctorala: <%= @activity.student.complete_name %> </h1>
+<p>
+  <strong>An inmatriculare:</strong>
+  <%= @activity.registration_year %>
+</p>
+
+<p>
+  <strong>Conducator stiintific:</strong>
+  <% unless @activity.coordinator.blank? %><%=h @activity.coordinator.complete_name %><% end %>
+</p>
+
+<p>
+  <strong>Doctorand:</strong>
+  <% unless @activity.student.blank? %><%=h @activity.student.complete_name %><% end %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @activity.status %>
+</p>
+
+<p>
+  <strong>Tip examinare:</strong>
+  <% unless @activity.examination_type.blank? %><%=h @activity.examination_type.name %><% end %>
+</p>
+
+<p>
+  <strong>Denumire activitate:</strong>
+  <%= @activity.name %>
+</p>
+
+<p>
+  <strong>Data sustinerii:</strong>
+  <% unless @activity.defense_date.blank? %><%= @activity.defense_date.strftime("%d.%m.%Y") %><% end %>
+</p>
+
+<p>
+  <strong>Comisia:</strong>
+  <%= @activity.comitee %>
+</p>
+
+<p>
+  <strong>Decizia:</strong>
+  <%= @activity.result %>
+</p>
+
+<p>
+  <strong>Calificativ:</strong>
+  <%= @activity.mark %>
+</p>
+
+<p>
+  <strong>Observatii:</strong>
+  <%= @activity.remarks %>
+</p>
+

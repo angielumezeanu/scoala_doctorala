@@ -1,0 +1,26 @@
+<%= form_with(model: examination_type, local: true) do |form| %>
+  <% if examination_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(examination_type.errors.count, "error") %> nu s-a putut face salvarea:</h2>
+
+      <ul>
+      <% examination_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Tip examinare
+    <%= form.text_field :name, id: :examination_type_name %>
+  </div>
+  <div class="field">
+    Titlu disciplina
+    <%= form.text_field :name, id: :examination_type_title %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salveaza" %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:o="urn:schemas-microsoft-com:office:office"
+          xmlns:x="urn:schemas-microsoft-com:office:excel"
+          xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+          xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">An inmatriculare</Data></Cell>
+        <Cell><Data ss:Type="String">Conducator stiintific</Data></Cell>
+        <Cell><Data ss:Type="String">Doctorand</Data></Cell>
+        <Cell><Data ss:Type="String">Statut</Data></Cell>
+        <Cell><Data ss:Type="String">Tip examinare</Data></Cell>
+        <Cell><Data ss:Type="String">Activitate</Data></Cell>
+        <Cell><Data ss:Type="String">Data sustinerii</Data></Cell>
+        <Cell><Data ss:Type="String">Comisie</Data></Cell>
+        <Cell><Data ss:Type="String">Decizie</Data></Cell>
+        <Cell><Data ss:Type="String">Calificativ</Data></Cell>
+        <Cell><Data ss:Type="String">Observatii</Data></Cell>
+
+      </Row>
+      <% @activities.each do |activity| %>
+          <Row>
+            <Cell><Data ss:Type="Number"><%= activity.registration_year %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless activity.coordinator.blank? %><%= activity.coordinator.firstname %> <%= activity.coordinator.lastname %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless activity.student.blank? %><%= activity.student.firstname %> <%= activity.student.lastname %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= activity.status %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless activity.examination_type.blank? %><%= activity.examination_type.name %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= activity.name %></Data></Cell>
+            <Cell><Data ss:Type="String"><% unless activity.defense_date.blank? %><%= activity.defense_date.strftime("%d.%m.%Y") %><% end %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= activity.comitee %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= activity.result %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= activity.mark %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= activity.remarks %></Data></Cell>
+          </Row>
+      <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

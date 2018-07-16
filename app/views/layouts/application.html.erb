@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScoalaDoctorala</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <div id="header">
+    <div class="login" style="float:right;">
+      <% if user_signed_in? -%>
+        <div id="user_login_box" style="float:right">
+          Logged in as <%= current_user.email %> |
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class=>"userlink" %>
+        </div>
+      <% else %>
+        <%= link_to 'Sign in', new_user_session_path, :class=>"userlink" %>
+      <% end -%> <br>
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+      <%- end -%>
+    </div>
+
+  <nav id="rolling-nav">
+    <ul>
+      <li class="selected"><a href="<%= activities_path %>">Activitati doctorale</a></li>
+      <li><a href="<%= coordinators_path %>">Conducatori stiintifici</a></li>
+      <li><a href="<%= students_path %>">Doctoranzi</a></li>
+      <li><a href="<%= examination_types_path %>">Tipuri de examinare</a></li>
+    </ul>
+  </nav>
+  </div>
+  <body>
+    <%= yield %>
+  </body>
+</html>

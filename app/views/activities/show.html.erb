@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'PDF', request.parameters.merge({:format => :pdf}) %><br/>  <br/>
+
+<p>
+  <strong>An inmatriculare:</strong>
+  <%= @activity.registration_year %>
+</p>
+
+<p>
+  <strong>Conducator stiintific:</strong>
+  <% unless @activity.coordinator.blank? %><%=h @activity.coordinator.complete_name %><% end %>
+</p>
+
+<p>
+  <strong>Doctorand:</strong>
+  <% unless @activity.student.blank? %><%=h @activity.student.complete_name %><% end %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @activity.status %>
+</p>
+
+<p>
+  <strong>Tip examinare:</strong>
+  <% unless @activity.examination_type.blank? %><%=h @activity.examination_type.name %><% end %>
+</p>
+
+<p>
+  <strong>Denumire activitate:</strong>
+  <%= @activity.name %>
+</p>
+
+<p>
+  <strong>Data sustinerii:</strong>
+  <% unless @activity.defense_date.blank? %><%= @activity.defense_date.strftime("%d.%m.%Y") %><% end %>
+</p>
+
+<p>
+  <strong>Comisia:</strong>
+  <%= @activity.comitee %>
+</p>
+
+<p>
+  <strong>Decizia:</strong>
+  <%= @activity.result %>
+</p>
+
+<p>
+  <strong>Calificativ:</strong>
+  <%= @activity.mark %>
+</p>
+
+<p>
+  <strong>Observatii:</strong>
+  <%= @activity.remarks %>
+</p>
+
+<%= link_to 'Modificare', edit_activity_path(@activity) %> |
+<%= link_to 'Inapoi', activities_path %>

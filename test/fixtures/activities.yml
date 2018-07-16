@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration_year: 1
+  coordinator: one
+  student: one
+  status: MyString
+  examination_type: one
+  name: MyString
+  defense_date: 2018-03-01
+  comitee: MyString
+  result: MyString
+  remarks: MyString
+
+two:
+  registration_year: 1
+  coordinator: two
+  student: two
+  status: MyString
+  examination_type: two
+  name: MyString
+  defense_date: 2018-03-01
+  comitee: MyString
+  result: MyString
+  remarks: MyString
