@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: scoaladoctorala
+  database: scoala_doctorala_development
   username: scoala
   password: scoala2018
