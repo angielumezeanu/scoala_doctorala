@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180716070822) do
+ActiveRecord::Schema.define(version: 20180718074414) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "registration_year"
@@ -60,11 +60,14 @@ ActiveRecord::Schema.define(version: 20180716070822) do
     t.string "firstname"
     t.string "lastname"
     t.date "matdate"
+    t.string "thesis"
+    t.string "payment"
     t.date "birthdate"
     t.integer "telephone"
     t.string "email"
     t.string "address"
     t.string "institution"
+    t.string "occupation"
     t.bigint "coordinator_id"
     t.text "remarks"
     t.datetime "created_at", null: false

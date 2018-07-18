@@ -5,6 +5,8 @@ class Student < ApplicationRecord
     "#{firstname} #{lastname}"
   end
 
+  Forma = %w[Cu_taxa Fara_taxa]
+
   ransacker :custom_years do |args|
     query = <<-SQL
       Year(matdate)

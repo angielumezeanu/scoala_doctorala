@@ -16,6 +16,16 @@
 </p>
 
 <p>
+  <strong>Titlul tezei:</strong>
+  <%= @student.thesis %>
+</p>
+
+<p>
+  <strong>Forma de invatamant:</strong>
+  <%= @student.payment %>
+</p>
+
+<p>
   <strong>Data nastere:</strong>
   <% unless @student.matdate.blank? %><%= @student.birthdate.strftime("%d.%m.%Y") %><% end %>
 </p>
@@ -38,6 +48,11 @@
 <p>
   <strong>Institutia afiliata:</strong>
   <%= @student.institution %>
+</p>
+
+<p>
+  <strong>Profesia:</strong>
+  <%= @student.occupation %>
 </p>
 
 <p>

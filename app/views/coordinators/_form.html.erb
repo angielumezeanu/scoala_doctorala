@@ -58,9 +58,9 @@
   </div>
 
   <div class="field">
-    Data intrarii in institut<br/>
-    <%= form.date_select :institut_date, id: :coordinator_institut_date, :use_month_numbers=>true, :start_year => 1970, :end_year => Time.now.year,
-                         :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
+    Anul intrarii in institut<br/>
+
+      <%= form.text_field :institut_date, id: :student_institut_date %>
   </div>
 
   <div class="field">

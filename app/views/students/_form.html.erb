@@ -28,6 +28,16 @@
   </div>
 
   <div class="field">
+    Titlul tezei<br/>
+    <%= form.text_field :thesis, id: :student_thesis %>
+  </div>
+
+  <div class="field">
+    Forma de invatamant<br/>
+    <%= collection_select(:student, :payment, Student::Forma, :to_s, :humanize, options ={:include_blank => "Selecteaza"}, {:class=>'ListaDropDown'}) %>
+  </div>
+
+  <div class="field">
     Data nastere<br/>
     <%= form.date_select :birthdate, id: :student_birthdate, :use_month_numbers=>true, :start_year => 1950, :end_year => Time.now.year,
                          :order =>[:day, :month, :year], :prompt=>{:day=>"Ziua", :month=>"Luna", :year=>"Anul"}%>
@@ -51,6 +61,11 @@
   <div class="field">
     Institutia afiliata<br/>
     <%= form.text_field :institution, id: :student_institution %>
+  </div>
+
+  <div class="field">
+    Profesia<br/>
+    <%= form.text_field :occupation, id: :student_occupation %>
   </div>
 
   <div class="field">
